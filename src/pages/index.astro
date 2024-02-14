@@ -9,6 +9,7 @@ import ExperienceIcon from "../assets/icons/Experience.astro";
 import ProjectsIcon from "../assets/icons/ProjectsIcon.astro";
 import PDFIcon from "../assets/icons/PDFIcon.astro";
 import photo from "../assets/profile/compressedAlbert.jpg?url";
+import cv from "../../public/AlbertOlivaResume.pdf";
 import SocialMedia from "../components/SocialMedia.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
@@ -55,7 +56,7 @@ description="Portfolio project that, while showing some of my projects and skill
 					<span class="hover-text">Click for copy to clipboard</span>
 					<span class="clicked-text">Email on your clipboard</span>
 				</button>
-				<SocialMedia href={photo}>
+				<SocialMedia href={cv}>
 					<PDFIcon class="size-4 lg:size-6"/>My CV
 				</SocialMedia>
 			</nav>
@@ -89,14 +90,14 @@ description="Portfolio project that, while showing some of my projects and skill
 			<h2>⚡ Pet projects:</h2>
 			<ul>
 				<li>Dockers</li>
-				<li>HA:</li>
-				  <ul>
+				<li>Home Assistant</li>
+				  <!-- <ul>
 					<li>Consumo eléctrico</li>
 					<li>Caldera inteligente</li>
 					<li>Estore</li>
 					<li>Persiana</li>
 				  </ul>
-				<li>Trello integration with GAS</li>
+				<li>Trello integration with GAS</li> -->
 			</ul>
 		</SectionContainer>
 	</main>
