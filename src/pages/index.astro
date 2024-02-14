@@ -1,0 +1,103 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../assets/icons/Linkedin.astro";
+import GithubIcon from "../assets/icons/Github.astro";
+import BitbuckIcon from "../assets/icons/Bitbucket.astro";
+import MailIcon from "../assets/icons/Mail.astro";
+import ExperienceIcon from "../assets/icons/Experience.astro";
+import ProjectsIcon from "../assets/icons/ProjectsIcon.astro";
+import PDFIcon from "../assets/icons/PDFIcon.astro";
+import photo from "../assets/profile/compressedAlbert.jpg?url";
+import SocialMedia from "../components/SocialMedia.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+---
+
+<Layout
+title="Albert Oliva Roura's portfolio. QA | SDET"
+description="Portfolio project that, while showing some of my projects and skills, has helped me expand my experience in web development.">
+	<main class="px-4">
+		<SectionContainer id="about" class="py-44 pb-32">
+			<img
+				class="rounded-full w-60 h-80 mb-4"
+				src={photo}
+				alt="albert photo"
+			/>
+			<h1
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-4"
+			>
+				Hi! My name is Albert. <div
+					class="flex justify-center items-center"
+				>
+					<Badge>Focused on QA for 12 years.</Badge>
+				</div>
+			</h1>
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+				I love sharing my knowledge and learning from others.
+			</h2>
+			<nav class="flex gap-4 mt-18 flex-wrap">
+				<SocialMedia href="https://www.linkedin.com/in/albertqa">
+					<LinkedInIcon class="size-4 lg:size-6" />
+						LinkedIn
+				</SocialMedia>
+				<SocialMedia href="https://github.com/olivaalbert1">
+					<GithubIcon class="size-4 lg:size-6" />
+						Github
+				</SocialMedia>
+				<SocialMedia href="https://bitbucket.org/AlbertOlivaRoura/workspace/repositories/">
+					<BitbuckIcon class="size-4 lg:size-6" />
+						Bitbucket
+				</SocialMedia>
+				<button id="emailButton" class="boton"><MailIcon class="size-4 lg:size-6" />
+					<span class="default-text">oliva.albert@gmail.com</span>
+					<span class="hover-text">Click for copy to clipboard</span>
+					<span class="clicked-text">Email on your clipboard</span>
+				</button>
+				<SocialMedia href={photo}>
+					<PDFIcon class="size-4 lg:size-6"/>My CV
+				</SocialMedia>
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="experience">
+			<!-- <nav class="flex gap-x-4 mt-18"> -->
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ExperienceIcon class="size-6" />
+				Experience
+			</h2>
+			<Experience />
+		</nav>
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<!-- <nav class="flex gap-x-4 mt-18"> -->
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ProjectsIcon class="size-8" />
+				Projects
+			</h2>
+			<Projects />
+		</nav>
+		</SectionContainer>
+		<SectionContainer id="colaborations">
+			<h2>✍ Colaborations:</h2>
+			<ul>
+				<li>QALovers</li>
+			</ul>
+		</SectionContainer>
+
+		<SectionContainer id="petprojects">
+			<h2>⚡ Pet projects:</h2>
+			<ul>
+				<li>Dockers</li>
+				<li>HA:</li>
+				  <ul>
+					<li>Consumo eléctrico</li>
+					<li>Caldera inteligente</li>
+					<li>Estore</li>
+					<li>Persiana</li>
+				  </ul>
+				<li>Trello integration with GAS</li>
+			</ul>
+		</SectionContainer>
+	</main>
+</Layout>

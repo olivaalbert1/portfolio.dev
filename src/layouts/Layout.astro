@@ -1,0 +1,105 @@
+---
+import "@fontsource-variable/onest";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "aos/dist/aos.css";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" >
+	<head >
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<div></div>
+	<body class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
+		<Header class="absolute"/>
+		<slot />
+		<Footer />
+		<script src="../js/main"></script>
+	</body>
+
+	<style is:global>
+		:root {
+			color-scheme: light dark;
+		}
+		html {
+			font-family: "Onest Variable", system-ui, sans-serif;
+		}
+		header {
+			position: sticky;
+			top: 0;
+			backdrop-filter: blur(5px);
+			z-index: 100; /* Ensures the header stays on top of other content */
+		}
+
+		body {
+			background-color: #050505;
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+		.boton {
+			display: inline-block;
+			background-color: rgba(255, 255, 255, 0.05);
+			font-size: auto;
+			padding: 8px 16px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 25px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 9px;
+		}
+		.boton .default-text {
+		}
+		.boton .hover-text {
+			display: none;
+		}
+		.boton .clicked-text {
+			display: none;
+		}
+		.boton:hover .default-text {
+			display: none;
+		}
+
+		.boton:hover {
+			background-color: rgba(255, 255, 255, 0.05);
+		}
+		.boton:hover .hover-text {
+			display: inline;
+		}
+
+		.boton.copiado .clicked-text {
+			display: inline;
+		}
+		.boton.copiado .default-text {
+			display: none;
+		}
+		.boton.copiado .hover-text {
+			display: none;
+		}
+		.boton.copiado {
+			background-color: #4caf50;
+			color: white;
+			text-align: center;
+		}
+
+		.boton.copiado::after {
+			display: none;
+		}
+	</style>
+</html>
