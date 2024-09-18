@@ -1,46 +1,56 @@
 ---
-import JavaScriptIcon from '../assets/icons/JavaScriptIcon.astro'
-import PythonIcon from '../assets/icons/PythonIcon.astro'
+import JavaScriptIcon from "../assets/icons/JavaScriptIcon.astro";
+import PythonIcon from "../assets/icons/PythonIcon.astro";
 
-import 'aos/dist/aos.css'
-
-
-
+import "aos/dist/aos.css";
 
 const TAGS = {
     NEXT: {
-        name: 'Next.js',
-        class: 'bg-black text-white',
-        icon: ''
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: "",
     },
     TAILWIND: {
-        name: 'Tailwind CSS',
-        class: 'bg-white text-[#73bcf6]',
-        icon: ''
+        name: "Tailwind CSS",
+        class: "bg-white text-[#73bcf6]",
+        icon: "",
     },
     JAVASCRIPT: {
-        name: 'JavaScript',
-        class: 'bg-black text-white',
-        icon: JavaScriptIcon
+        name: "JavaScript",
+        class: "bg-black text-white",
+        icon: JavaScriptIcon,
     },
     TYPESCRIPT: {
-        name: 'TypeScript',
-        class: 'bg-black text-white',
-        icon: ''
+        name: "TypeScript",
+        class: "bg-black text-white",
+        icon: "",
     },
     REACT: {
-        name: 'React',
-        class: 'bg-black text-white',
-        icon: ''
+        name: "React",
+        class: "bg-black text-white",
+        icon: "",
     },
     PYTHON: {
-        name: 'Python',
-        class: 'bg-black text-white',
-        icon: PythonIcon
+        name: "Python",
+        class: "bg-black text-white",
+        icon: PythonIcon,
+    },
+    NOPROGRAM: {
+        name: "no languaje",
+        class: "bg-black text-white",
+        icon: "",
     }
-}
+};
 
 const PROJECTS = [
+    {
+        title: "Make real blinkers for Eurotruck simulator 2",
+        description: "How to get a indicator stalk to work for Eurotruck simulator 2",
+        link: "https://www.youtube.com/watch?v=VKIkLWFSkow",
+        github: "",
+        image: "https://i9.ytimg.com/vi_webp/VKIkLWFSkow/maxresdefault.webp?v=61621987&sqp=CNzIrLcG&rs=AOn4CLDV509e-QezYgA0lDX3ZWtaUt22rA",
+        tags: [TAGS.JAVASCRIPT],
+    } /*,
     {
         title: 'WAPI',
         description: 'Open API with data persistence made by and for testers',
@@ -48,7 +58,7 @@ const PROJECTS = [
         github: 'https://github.com/AlbertORoura/WAPI',
         image: 'https://camo.githubusercontent.com/b5bfd2c4ce476f01eec8a1b01936ac3ca7de496b85ff6a112d1e62b98df06fd3/68747470733a2f2f6d656469612e74656e6f722e636f6d2f554b33785175485455437741414141432f6368696366792d67756170692e676966',
         tags: [TAGS.JAVASCRIPT]
-    }/*,
+    },
     {
         title: 'EuroTruck simulator',
         description: 'Project created in Angular and with Firebase for users to consult the trucks available in the game and their characteristics. In addition to having an interactive map that shows where there are gas stations',
@@ -96,25 +106,26 @@ const PROJECTS = [
         github: '',
         image: 'https://toppng.com/uploads/preview/mobile-testing-google-apps-script-logo-11569048628p56yixwgrz.png',
         tags: [TAGS.JAVASCRIPT]
-    }*/
-]
+    }*/,
+];
 ---
 
 {
-    PROJECTS.map(({title, description, link, github, image, tags}) => (
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
         <article data-aos="fade-right">
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2"><a href={link}>{title}</a></h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-2 flex-row">
-                {(tags.map(tag => (
+                {tags.map((tag) => (
                     <li>
-                        <span class={`flex gap-x-2 rounded-full text-s ${tag.class} py-1 py-2`}>
+                        <span
+                            class={`flex gap-x-2 rounded-full text-s ${tag.class} py-1 py-2`}
+                        >
                             <tag.icon class="size-6" />
                             {tag.name}
                         </span>
                     </li>
-                    ))
-                )}
+                ))}
             </ul>
             <img
                 class="rounded shadow-2xl shadow-white/10"
