@@ -1,6 +1,8 @@
 ---
 import JavaScriptIcon from "../assets/icons/JavaScriptIcon.astro";
 import PythonIcon from "../assets/icons/PythonIcon.astro";
+import NoIcon from "../assets/icons/NoIcon.astro";
+import ets2 from "../assets/projects/ets2.webp?url";
 
 import "aos/dist/aos.css";
 
@@ -36,9 +38,9 @@ const TAGS = {
         icon: PythonIcon,
     },
     NOPROGRAM: {
-        name: "no languaje",
+        name: "no language",
         class: "bg-black text-white",
-        icon: "",
+        icon: NoIcon,
     }
 };
 
@@ -48,8 +50,8 @@ const PROJECTS = [
         description: "How to get a indicator stalk to work for Eurotruck simulator 2",
         link: "https://www.youtube.com/watch?v=VKIkLWFSkow",
         github: "",
-        image: "https://i9.ytimg.com/vi_webp/VKIkLWFSkow/maxresdefault.webp?v=61621987&sqp=CNzIrLcG&rs=AOn4CLDV509e-QezYgA0lDX3ZWtaUt22rA",
-        tags: [TAGS.JAVASCRIPT],
+        image: ets2,
+        tags: [TAGS.NOPROGRAM],
     } /*,
     {
         title: 'WAPI',
@@ -113,7 +115,7 @@ const PROJECTS = [
 {
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
         <article data-aos="fade-right">
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2"><a href={link}>{title}</a></h3>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2"><a href={link} target="_blank" rel="noopener">{title}</a></h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-2 flex-row">
                 {tags.map((tag) => (
@@ -127,11 +129,13 @@ const PROJECTS = [
                     </li>
                 ))}
             </ul>
+            <a href={link} target="_blank" rel="noopener">
             <img
                 class="rounded shadow-2xl shadow-white/10"
                 src={image}
                 alt={title}
             />
+        </a>
         </article>
     ))
 }
