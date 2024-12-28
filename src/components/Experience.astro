@@ -1,38 +1,45 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+import YearsCounter from "../js/yearCounter";
 const EXPERIENCE = [
     {
         date: 'July 2022',
+        years: YearsCounter(new Date(2022, 6, 1), new Date()),
         title: 'Senior SDET at Derivco Sports',
         description: 'SDET in a games studio developing custom components and product for the online gambling industry. Led test automation efforts for a legacy project lacking any testing; worked on stabilizing and adding minimum coverage while promoting best practices. Developed and maintained automated test frameworks using Cucumber, Playwright, NUnit, covering from unit to e2e layers.',
         link: 'https://careers.derivcosports.com/'
     },
     {
         date: 'Juny 2021',
+        years: YearsCounter(new Date(2021, 5, 1), new Date(2022, 6, 1)),
         title: 'Senior SDET at AXA insurance',
         description: 'Senior SDET embedded in a client from the insurance industry. Implemented testing for a business intelligence tool in charge of data ingestion, data pipelines, dataset transformation and visualization, through a Python/PowerBI solution. I tested the Azure data pipelines through custom scripts and the business logic with Cucumber. Assisted in production releases to perform smoke testing and troubleshooting.',
         link: 'https://www.axa.es/'
     },
     {
         date: 'Nov 2020',
+        years: YearsCounter(new Date(2020, 10, 1), new Date(2021, 5, 1)),
         title: 'Senior QA Engineer at Cotecna',
         description: 'Senior QA Engineer for a leading testing & certification company. Introduced a holistic approach to quality, implementing practices such as 3 amigos meeting and being actively involved in refinement sessions. Designed and facilitated testing workshops for other QA peers in a number of topics, i.e. Postman. Worked closely with Product Managers and Development teams to prioritize testing efforts and ensure on-time delivery.',
         link: 'https://www.cotecna.com/'
     },
     {
         date: 'Oct 2019',
+        years: YearsCounter(new Date(2019, 9, 1), new Date(2020, 5, 1)),
         title: 'Senior QA Engineer at Woffu',
         description: 'Senior QA Engineer testing a time-management app for companies. As the first SDET hire, implemented the automated testing framework from scratch, based on Protractor(Js) for the client interface and Postman for the API. Trained the manual QA peers so they could start contributing to the automation efforts. Contributed to testing the native mobile applications. Supported Customer Success team in production issues triage. Drove the adoption of the main scrum practices and ceremonies, promoting a shift-left approach to testing.',
         link: 'https://woffu.com/es/'
     },
     {
         date: 'Sep 2018',
+        years: YearsCounter(new Date(2018, 8, 1), new Date(2019, 9, 1)),
         title: 'Senior QA Engineer at Ogun',
         description: 'Senior QA Engineer, building an ERP for the construction industry. Had the opportunity to participate in a new venture from incubating stage to production launch. As the first QA hire, I evolved the automated testing effort from a PoC to an actual framework, covering frontend e2e with Protractor and API with Postman, creating the different testing suites (regression, release etc). Was the only QA contributor for the 4 squads that composed the Tech team.',
         link: 'https://www.youtube.com/watch?v=KrHqOUnNsRU'
     },
     {
         date: 'Apr 2015',
+        years: YearsCounter(new Date(2015, 3, 1), new Date(2018, 8, 1)),
         title: 'Senior QA Engineer at Wolters kluwer',
         description: '.NET tester in a Scrum team for our customer Wolters Kluwer.',
         link: 'https://www.wolterskluwer.com/es-es/solutions/a3factura'
