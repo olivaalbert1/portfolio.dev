@@ -2,6 +2,13 @@
 import ExperienceItem from "./ExperienceItem.astro";
 import YearsCounter from "../js/yearCounter";
 const EXPERIENCE = [
+{
+        date: 'November 2024',
+        years: YearsCounter(new Date(2024, 10, 1), new Date()),
+        title: 'Senior SDET at Between Technology',
+        description: 'SDET in a technological hub developing custom components and product for the client number 1 in printing industry. Lead test automation e2e tests for a legacy project lacking any testing; worked on stabilizing and adding minimum coverage while promoting best practices. Developed and maintained automated test frameworks using Playwright.',
+        link: 'https://www.between.tech/'
+    },
     {
         date: 'July 2022',
         years: YearsCounter(new Date(2022, 6, 1), new Date()),
